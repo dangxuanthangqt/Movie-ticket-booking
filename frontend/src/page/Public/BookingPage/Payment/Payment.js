@@ -29,7 +29,10 @@ const useStyles = makeStyles((theme) => ({
     border: "2px solid #000",
     boxShadow: theme.shadows[5],
     padding: theme.spacing(2, 4, 3),
-    width: "40%",
+    width: "50%",
+    [theme.breakpoints.down("sm")]:{
+      width: "100%"
+    }
   },
   content: {
     display: "flex",
@@ -91,7 +94,7 @@ function Payment(props) {
       date: selectedDate,
     };
     dispatch(Make_reservation(reservation, params.id));
-    dispatch(mailConfirm(currentReservation));
+   // dispatch(mailConfirm(currentReservation));
     dispatch(showInvitationForm());
     handleClose();
   };
@@ -112,7 +115,7 @@ function Payment(props) {
       >
         <div className={classes.paper}>
           <Grid container spacing={3}>
-            <Grid item xs={6}>
+            <Grid item xs={12} sm={6}>
               <FormControl component="fieldset">
                 <FormLabel component="legend">
                   {t("booking.paymentmethod")}
@@ -145,7 +148,7 @@ function Payment(props) {
                 </RadioGroup>
               </FormControl>
             </Grid>
-            <Grid item xs={6}>
+            <Grid item xs={12} sm={6}>
               <FormControl fullWidth>
                 <TextField
                   fullWidth

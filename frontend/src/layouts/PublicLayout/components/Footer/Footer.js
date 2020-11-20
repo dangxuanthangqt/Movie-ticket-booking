@@ -7,8 +7,8 @@ export default function Footer() {
   const { t, i18n } = useTranslation();
   const classes = useStyles();
   return (
-    <div className={classes.root}>
-      <Divider />
+    <div >
+      {/* <Divider />
       <Typography className={classes.copyright} variant="body1">
         &copy; FEDN36P2
       </Typography>
@@ -17,7 +17,7 @@ export default function Footer() {
         <Link href="#" target="_blank" rel="noopener">
           Me
         </Link>
-      </Typography>
+      </Typography> */}
     </div>
   );
 }

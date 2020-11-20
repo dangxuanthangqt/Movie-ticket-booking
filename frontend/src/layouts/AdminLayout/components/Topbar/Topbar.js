@@ -5,7 +5,7 @@ import InputIcon from "@material-ui/icons/Input";
 import MenuIcon from "@material-ui/icons/Menu";
 import React, { useEffect } from "react";
 import styles from "./styles";
-import { connect } from "react-redux";
+import { connect, useDispatch } from "react-redux";
 import NotificationsIcon from "@material-ui/icons/NotificationsOutlined";
 
 import { NavLink, useHistory } from "react-router-dom";
@@ -20,7 +20,6 @@ function Topbar(props) {
     children,
     isSidebarOpen,
     onToggleSidebar,
-    logout,
     history,
     isAuthenticated,
   } = props;
@@ -28,9 +27,15 @@ function Topbar(props) {
   const changeLanguage = (lng) => {
     i18n.changeLanguage(lng);
   };
+  const dispatch = useDispatch();
   useEffect(() => {
     changeLanguage("en");
   }, []);
+  const handleLogout =()=>{
+    if(window.confirm("Logout ?")){
+      dispatch(logout())
+    }
+  }
   useEffect(() => {
     if (!isAuthenticated) {
       return history.push("/");
@@ -68,7 +73,7 @@ function Topbar(props) {
             <Button onClick={() => changeLanguage("en")}>ENG</Button>
           </div>
           <IconButton className={classes.signOutButton}>
-            <InputIcon onClick={logout} />
+            <InputIcon onClick={handleLogout} />
           </IconButton>
         </div>
       </Toolbar>

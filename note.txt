@@ -1,0 +1,4 @@
+window.pageYoffset =>> trả về số pixel khi chúng ta scroll
+
+
+dùng react-slick=>> làm slider carousel

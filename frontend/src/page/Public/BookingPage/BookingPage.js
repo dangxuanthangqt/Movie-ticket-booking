@@ -53,7 +53,7 @@ function BookingPage(props) {
     <Container maxWidth="xl" className={classes.container}>
       <Grid container spacing={2} style={{ height: "100%" }}>
         <MovieInfo movie={movie} />
-        <Grid item lg={9} xs={12} md={12}>
+        <Grid item lg={9} xs={12} md={12} style={{display: "flex", justifyContent: "space-between", flexDirection: "column"}}>
           <BookingForm></BookingForm>
           {selectedTime && (
             <>

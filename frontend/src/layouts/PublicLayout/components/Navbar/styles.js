@@ -1,104 +1,107 @@
-export default theme => ({
+export default (theme) => ({
   navbar: {
-    position: 'fixed',
+    position: "fixed",
     top: 0,
     left: 0,
-    width: '100%',
-    padding: '1.25rem 20px',
-    display: 'flex',
-    flexWrap: 'wrap',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    transform: 'translate3d(0,0,0)',
-    backfaceVisibility: 'hidden',
+    width: "100%",
+    padding: "1.25rem 20px",
+    display: "flex",
+    flexWrap: "wrap",
+    alignItems: "center",
+    justifyContent: "space-between",
+    transform: "translate3d(0,0,0)",
+    backfaceVisibility: "hidden",
     zIndex: 999,
-    transition: 'all 300ms ease-in'
+    transition: "all 300ms ease-in",
   },
   navbarColor: {
     background: theme.palette.background.dark,
-    transition: 'all 200ms ease-out'
+    transition: "all 200ms ease-out",
   },
   logoLink: {
-    display: 'inline-block',
-    paddingTop: '.15rem',
-    paddingBottom: '.15rem',
-    marginRight: '20px',
-    fontSize: '1.5rem',
-    lineHeight: 'inherit',
-    whiteSpace: 'nowrap',
-    textDecoration: 'none'
+    display: "inline-block",
+    paddingTop: ".15rem",
+    paddingBottom: ".15rem",
+    marginRight: "20px",
+    fontSize: "1.5rem",
+    lineHeight: "inherit",
+    whiteSpace: "nowrap",
+    textDecoration: "none",
   },
   logo: {
-    maxHeight: '2.4rem',
-    width: 'auto',
-    fontSize: '2rem',
-    letterSpacing: '1px',
-    color: theme.palette.common.white
+    maxHeight: "2.4rem",
+    width: "auto",
+    fontSize: "2rem",
+    letterSpacing: "1px",
+    color: theme.palette.common.white,
+    [theme.breakpoints.down("sm")]:{
+      fontSize: "1.5rem"
+    }
   },
   navLinks: {
-    marginLeft: 'auto',
-    display: 'flex'
+    marginLeft: "auto",
+    display: "flex",
   },
   navLink: {
-    position: 'relative',
+    position: "relative",
     color: theme.palette.common.white,
-    padding: '0 .5rem',
-    margin: '0 1rem',
-    fontSize: '1.1rem',
-    fontWeight: '600',
-    cursor: 'pointer',
-    textDecoration: 'none',
+    padding: "0 .5rem",
+    margin: "0 1rem",
+    fontSize: "1.1rem",
+    fontWeight: "600",
+    cursor: "pointer",
+    textDecoration: "none",
     zIndex: 2,
-    '&:after': {
+    "&:after": {
       content: '""',
-      position: 'absolute',
+      position: "absolute",
       bottom: 0,
       left: 0,
-      width: '100%',
+      width: "100%",
       opacity: 0,
       height: 0,
-      backgroundColor: 'rgba(255,255,255,0.5)',
-      transition: 'all 200ms linear',
-      zIndex: 1
+      backgroundColor: "rgba(255,255,255,0.5)",
+      transition: "all 200ms linear",
+      zIndex: 1,
     },
-    '&:hover:after': {
+    "&:hover:after": {
       opacity: 1,
-      height: '9px'
-    }
+      height: "9px",
+    },
   },
-  navAccount: { marginLeft: 'auto', marginRight: theme.spacing(3) },
+  navAccount: { marginLeft: "auto", marginRight: theme.spacing(3) },
   navMobile: { marginRight: theme.spacing(1) },
   navIcon: {
-    display: 'none',
-    height: '30px',
-    width: '30px',
-    position: 'relative',
+    display: "none",
+    height: "30px",
+    width: "30px",
+    position: "relative",
     zIndex: 2,
-    cursor: 'pointer',
-    '&:hover $navIconLine__left, &:hover $navIconLine__right': {
-      width: '30px'
-    }
+    cursor: "pointer",
+    "&:hover $navIconLine__left, &:hover $navIconLine__right": {
+      width: "30px",
+    },
   },
   navIconLine: {
-    height: '2px',
-    width: '30px',
-    display: 'block',
+    height: "2px",
+    width: "30px",
+    display: "block",
     backgroundColor: theme.palette.common.white,
-    marginBottom: '7px',
-    transition: ' transform .2s ease, background-color .5s ease'
+    marginBottom: "7px",
+    transition: " transform .2s ease, background-color .5s ease",
   },
   navIconLine__left: {
-    width: '20px',
-    transition: 'all 200ms linear'
+    width: "20px",
+    transition: "all 200ms linear",
   },
   navIconLine__right: {
-    width: '20px',
-    transition: 'all 200ms linear'
+    width: "20px",
+    transition: "all 200ms linear",
   },
 
   nav: {
-    display: 'flex',
-    position: 'fixed',
+    display: "flex",
+    position: "fixed",
     top: 0,
     left: 0,
     right: 0,
@@ -106,117 +109,124 @@ export default theme => ({
     zIndex: -1,
     paddingLeft: 0,
     marginBottom: 0,
-    '&:before, &:after': {
+    "&:before, &:after": {
       content: '""',
-      position: 'fixed',
-      width: '100vw',
-      height: '100vh',
-      background: 'rgba(255, 255, 255, 0.1)',
-      zIndex: '-1',
-      transition: 'transform cubic-bezier(0.77, 0, 0.175, 1) 0.8s',
-      transform: 'translateX(0%) translateY(-100%)'
+      position: "fixed",
+      width: "100vw",
+      height: "100vh",
+      background: "rgba(255, 255, 255, 0.1)",
+      zIndex: "-1",
+      transition: "transform cubic-bezier(0.77, 0, 0.175, 1) 0.8s",
+      transform: "translateX(0%) translateY(-100%)",
     },
-    '&:before': {
+    "&:before": {
       background: theme.palette.common.black,
-      transitionDelay: '0s'
+      transitionDelay: "0s",
     },
-    '&:after': {
-      transitionDelay: '.1s'
-    }
+    "&:after": {
+      transitionDelay: ".1s",
+    },
   },
   navActive: {
-    visibility: 'visible',
+    visibility: "visible",
     zIndex: 9,
-    '&:before': {
-      transitionDelay: '0s',
-      transform: 'translateX(0%) translateY(0%)'
+    "&:before": {
+      transitionDelay: "0s",
+      transform: "translateX(0%) translateY(0%)",
     },
-    '&:after': {
-      transitionDelay: '.1s',
-      transform: 'translateX(0%) translateY(0%)'
+    "&:after": {
+      transitionDelay: ".1s",
+      transform: "translateX(0%) translateY(0%)",
     },
-    '& $navContent': {
-      visibility: 'visible'
+    "& $navContent": {
+      visibility: "visible",
     },
-    '& $navContent $currentPageShadow': {
-      transitionDelay: '.5s',
+    "& $navContent $currentPageShadow": {
+      transitionDelay: ".5s",
       opacity: 0.03,
-      marginTop: '0'
+      marginTop: "0",
     },
-    '& $navContent $innerNavListItem': {
-      transitionDelay: '.5s',
+    "& $navContent $innerNavListItem": {
+      transitionDelay: ".5s",
       opacity: 1,
-      transform: 'translateX(0%)',
-      transition: 'opacity .3s ease, transform .3s ease, color .3s ease'
-    }
+      transform: "translateX(0%)",
+      transition: "opacity .3s ease, transform .3s ease, color .3s ease",
+    },
   },
   navContent: {
-    position: 'fixed',
-    visibility: 'hidden',
-    top: '50%',
-    transform: 'translate(0%, -50%)',
-    width: '100%'
+    position: "fixed",
+    visibility: "hidden",
+    top: "50%",
+    transform: "translate(0%, -50%)",
+    width: "100%",
   },
   currentPageShadow: {
-    position: 'absolute',
-    top: '50%',
-    left: '50%',
-    transform: 'translate(-50%, -50%)',
-    fontFamily: 'sans-serif',
-    fontSize: '10rem',
+    position: "absolute",
+    top: "50%",
+    left: "50%",
+    transform: "translate(-50%, -50%)",
+    fontFamily: "sans-serif",
+    fontSize: "10rem",
     fontWeight: 800,
-    marginTop: '25px',
-    color: '#fff',
+    marginTop: "25px",
+    color: "#fff",
     opacity: 0,
-    transition: 'all 300ms linear'
+    transition: "all 300ms linear",
   },
   innerNav: {
-    position: 'relative',
+    position: "relative",
     padding: 0,
     margin: 0,
-    zIndex: 2
+    zIndex: 2,
   },
   innerNavListItem: {
     opacity: 0,
-    position: 'relative',
-    display: 'block',
-    textAlign: 'center',
-    fontSize: '4rem',
-    lineHeight: '1.05',
-    letterSpacing: '3px',
-    transform: 'translate(0%, 100%)',
-    transition: 'opacity .2s ease, transform .3s ease'
+    position: "relative",
+    display: "block",
+    textAlign: "center",
+    marginTop: "2rem",
+    fontSize: "1rem",
+    lineHeight: "1.05",
+    letterSpacing: "3px",
+    transform: "translate(0%, 100%)",
+    transition: "opacity .2s ease, transform .3s ease",
   },
   innerNavLink: {
-    position: 'relative',
+    position: "relative",
     color: theme.palette.common.white,
-    padding: '0 .5rem',
-    margin: '0 1rem',
-    fontSize: '2rem',
+    padding: "0 .5rem",
+    margin: "0 1rem",
+    fontSize: "1.5rem",
     fontWeight: 600,
-    cursor: 'pointer',
-    textDecoration: 'none',
+    cursor: "pointer",
+    textDecoration: "none",
     zIndex: 2,
-    '&:after': {
+    "&:after": {
       content: '""',
-      position: 'absolute',
+      position: "absolute",
       bottom: 0,
       left: 0,
-      width: '100%',
+      width: "100%",
       opacity: 0,
       height: 0,
-      marginTop: '3px',
-      backgroundColor: 'rgba(255,255,255,0.5)',
-      transition: 'all 200ms linear',
-      zIndex: 1
+      marginTop: "3px",
+      backgroundColor: "rgba(255,255,255,0.5)",
+      transition: "all 200ms linear",
+      zIndex: 1,
     },
-    '&:hover:after': {
+    "&:hover:after": {
       opacity: 1,
-      height: 15
+      height: 15,
+    },
+  },
+  btn_language:{
+    [theme.breakpoints.down("sm")]:{
+      padding: "5px",
+      minWidth: 0
     }
   },
-  [theme.breakpoints.down('sm')]: {
-    navIcon: { display: 'block' },
-    navLinks: { display: 'none' }
-  }
+  [theme.breakpoints.down("sm")]: {
+    navIcon: { display: "block" },
+    navLinks: { display: "none" },
+  },
 });

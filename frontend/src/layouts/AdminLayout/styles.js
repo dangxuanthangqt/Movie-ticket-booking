@@ -14,7 +14,9 @@ export default theme => ({
       borderRight: 0,
       zIndex: 1200,
       width: '271px',
-      top: theme.topBar.height
+      top: theme.topBar.height,
+      position: "fixed",
+      left: "0px"
     },
     sidebar: {
       width: '270px'

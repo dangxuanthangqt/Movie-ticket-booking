@@ -65,7 +65,7 @@ function MovieCategoryPage(props) {
             xs={12}
             style={{ display: "flex", justifyContent: "center" }}
           >
-            <Grid item xs={3}>
+            <Grid item xs={8} md={4}>
               <TextField
                 id="outlined-basic"
                 label={t("category.search")}

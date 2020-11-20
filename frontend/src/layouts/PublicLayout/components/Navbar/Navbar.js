@@ -68,8 +68,8 @@ const Navbar = ({ classes, isAuth, user, logout }) => {
         </div>
 
         <div className={classes.navAccount}>
-          <Button onClick={() => changeLanguage("vi")}>VIE</Button>
-          <Button onClick={() => changeLanguage("en")}>ENG</Button>
+          <Button className={classes.btn_language} onClick={() => changeLanguage("vi")}>VIE</Button>
+          <Button className={classes.btn_language} onClick={() => changeLanguage("en")}>ENG</Button>
           <UserPopover logout={logout}>
             <List component="nav">
               {user && (
@@ -135,7 +135,7 @@ const Navbar = ({ classes, isAuth, user, logout }) => {
           <div className={classes.currentPageShadow}>Movies</div>
           <ul
             className={classes.innerNav}
-            onClick={() => setShowMenu(!this.state.showMenu)}
+            onClick={() => setShowMenu(!showMenu)}
           >
             <li className={classes.innerNavListItem}>
               <Link className={classes.innerNavLink} to="/">

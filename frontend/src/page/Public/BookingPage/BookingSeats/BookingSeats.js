@@ -8,18 +8,33 @@ const useStyles = makeStyles((theme) => ({
   row: {
     display: "flex",
     justifyContent: "center",
+    flexWrap:"wrap",
     width: "100%",
+  },
+  box: {
+    width: "100%",
+  },
+  button_seat:{
+    [theme.breakpoints.down('sm')]:{
+      padding: "0px !important"
+    }
   },
   seat: {
     cursor: "pointer",
     color: "rgba(255,255,255,0.7)",
     borderRadius: 2,
-    padding: theme.spacing(2),
+    
     margin: theme.spacing(0.5),
     fontWeight: 600,
     "&:hover": {
       background: "rgb(120, 205, 4)",
     },
+    [theme.breakpoints.down('sm')]:{
+      padding: "3px 8px !important",
+      width:"auto",
+      minWidth: "auto",
+      margin: "2px !important",
+    }
   },
   seatInfoContainer: {
     width: "50%",
@@ -107,7 +122,7 @@ export default function BookingSeats(props) {
   };
   return (
     <Fragment>
-      <Box width={1} pt={15}>
+      <Box  className={classes.box} pt={8}>
         {seats.length > 0 &&
           seats.map((seatRows, indexRow) => (
             <div key={indexRow} className={classes.row}>

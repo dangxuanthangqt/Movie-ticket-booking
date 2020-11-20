@@ -72,7 +72,7 @@ export default function BookingForm(props) {
 
   return (
     <Grid container spacing={3}>
-      <Grid item xs>
+      <Grid item xs={12} sm>
         <TextField
           fullWidth
           select
@@ -89,7 +89,7 @@ export default function BookingForm(props) {
         </TextField>
       </Grid>
       {selectedCinema && (
-        <Grid item xs>
+        <Grid item xs={12} sm>
           <MuiPickersUtilsProvider utils={MomentUtils}>
             <KeyboardDatePicker
               inputVariant="outlined"
@@ -108,7 +108,7 @@ export default function BookingForm(props) {
         </Grid>
       )}
       {selectedDate && (
-        <Grid item xs>
+        <Grid item xs={12} sm>
           <TextField
             fullWidth
             select
